@@ -3,8 +3,8 @@ Description=Calls the main function automatically after startup. Output and erro
 After=multi-user.target
 
 [Service]
-StandardOutput = append:/home/pi/Desktop/output.log
-StandardError = append:/home/pi/Desktop/error.log
+StandardOutput = append:/home/pi/Desktop/SpaceNet_OS_Software/output.log
+StandardError = append:/home/pi/Desktop/SpaceNet_OS_Software/error.log
 ExecStart=/usr/bin/python3 -u /home/pi/Desktop/main.py
 
 [Install]
