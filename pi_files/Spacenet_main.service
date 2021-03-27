@@ -3,8 +3,8 @@ Description=Calls the main function automatically after startup. Output and erro
 After=multi-user.target
 
 [Service]
-StandardOutput = append:/media/pi/FLASH_DRIVE/pi_files/output.log
-StandardError = append:/media/pi/FLASH_DRIVE/pi_files/error.log
+StandardOutput = append:/home/pi/Desktop/output.log
+StandardError = append:/home/pi/Desktop/error.log
 ExecStart=/usr/bin/python3 -u /home/pi/Desktop/main.py
 
 [Install]

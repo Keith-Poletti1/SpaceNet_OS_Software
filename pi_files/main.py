@@ -20,7 +20,7 @@ def main():
     media_location = '/media/pi/FLASH_DRIVE/'
     startfile = 'auto_update.txt'
     data_output_location = '/media/pi/FLASH_DRIVE/wav_files'
-    working_dir = '/home/pi/Desktop/'
+    working_dir = '/home/pi/Desktop/SpaceNet_OS_Software'
     #############################################################################################################################
     #############################################################################################################################
     #############################################################################################################################
@@ -95,7 +95,7 @@ def main():
                 UHF_delay_in_seconds = (UHFtimes[0]-now).total_seconds()
                # print(UHF_delay_in_seconds) # print debug
 
-            collect_data('UHF',SampleRate,recordtime,SwitchPin) # call function to collect data and do whatever else
+            collect_data('UHF',SampleRate,recordtime,SwitchPin,working_dir) # call function to collect data and do whatever else
             # if UHFtimes:
              #   UHFtimes.pop(0)
             time_cleanup(UHFtimes)
@@ -113,7 +113,7 @@ def main():
                 Lband_delay_in_seconds = (Lbandtimes[0]-now).total_seconds()
                # print(Lband_delay_in_seconds) # print debug
 
-            collect_data('Lband',SampleRate,recordtime,SwitchPin) # call function to collect data and do whatever else
+            collect_data('Lband',SampleRate,recordtime,SwitchPin,working_dir) # call function to collect data and do whatever else
             #if Lbandtimes:
              #   Lbandtimes.pop(0)
             time_cleanup(UHFtimes)

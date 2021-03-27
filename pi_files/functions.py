@@ -60,7 +60,7 @@ def update_time(working_dir):
     os.system('cd ' + working_dir + ' && python2 RasPiTimeToUTCNew.py')
 
 
-def collect_data(band,samprate,recordtime,SwitchPin):
+def collect_data(band,samprate,recordtime,SwitchPin,working_dir):
     print('collecting data for ',band)
     numsamps = samprate*recordtime
     if band == 'UHF': 
@@ -81,7 +81,7 @@ def collect_data(band,samprate,recordtime,SwitchPin):
             blink(20, .25)
 
     GPIO.output(SwitchPin, GPIO.LOW) # when ledstate is low then we will record L signals
-    os.system('cd /home/pi/Desktop/ && hackrf_transfer -w -s' + str(samprate) + ' -f ' + str(freq) + ' -l ' + str(lnagain) + ' -g ' + str(vgagain) + ' -n ' + str(int(numsamps)))
+    os.system('cd ' + working_dir+' && hackrf_transfer -w -s' + str(samprate) + ' -f ' + str(freq) + ' -l ' + str(lnagain) + ' -g ' + str(vgagain) + ' -n ' + str(int(numsamps)))
     return
 
 def time_cleanup(flybylist):
