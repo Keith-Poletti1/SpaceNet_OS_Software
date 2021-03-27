@@ -1,0 +1,11 @@
+[Unit]
+Description=Calls the main function automatically after startup. Output and error logs are stored in output.log and error.log on the desktop
+After=multi-user.target
+
+[Service]
+StandardOutput = append:/media/pi/FLASH_DRIVE/pi_files/output.log
+StandardError = append:/media/pi/FLASH_DRIVE/pi_files/error.log
+ExecStart=/usr/bin/python3 -u /home/pi/Desktop/main.py
+
+[Install]
+WantedBy=multi-user.target

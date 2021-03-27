@@ -1,0 +1,1 @@
+cd /media/pi/FLASH_DRIVE/pi_files &&  python3 Auto_setup.py && sudo reboot
